@@ -1,0 +1,616 @@
+:root {
+	--bg: #0b0b0c;
+	--panel: #121214;
+	--muted: #9a9a9a;
+	--accent: #ffffff;
+}
+
+* {
+	box-sizing: border-box
+}
+
+html,
+body {
+	height: 100%
+}
+
+body {
+	margin: 0;
+	font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+	background: linear-gradient(180deg, #0b0b0c 0%, #0b0b0c 100%);
+	color: var(--accent);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 48px;
+	z-index: 40;
+}
+
+
+.logo {
+	letter-spacing: 6px;
+	font-weight: 600;
+	color: #e9e9ea;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+/* Hamburger button container */
+.menu-btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 22px;
+	cursor: pointer;
+}
+
+/* Each dash */
+.menu-btn span {
+	display: block;
+	height: 4px;
+	background: #333;
+	border-radius: 3px;
+}
+
+/* Dropdown container */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-top: 15px;
+	right: 10px;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	top: 35px;
+	/* space under button */
+	left: 0;
+	background-color: #0b0b0c;
+	min-width: 500px;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.dropdown-content a {
+	text-align: center;
+	color: #f3f3f3;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	transition: background 0.2s;
+	position: relative;
+
+}
+
+.dropdown-content a:hover {
+	background-color: #0000005e;
+}
+
+/* Show menu when active */
+.dropdown.show .dropdown-content {
+	display: block;
+	animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Remove the global flex styles from body */
+body {
+	background: #0a0a0a;
+	font-family: 'Segoe UI', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Wrap sign-in elements in a container so they don’t push other content */
+.signin-wrapper {
+	position: fixed;
+	/* stays on top without pushing layout */
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	/* keeps it above other elements */
+}
+
+/* Futuristic circular button */
+.signin-btn {
+	background: transparent;
+	border: 2px solid cyan;
+	border-radius: 50%;
+	width: 50px;
+	/* smaller size */
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.signin-btn:hover {
+	background: rgba(0, 255, 255, 0.1);
+	box-shadow: 0 0 6px cyan, 0 0 12px cyan;
+}
+
+.signin-btn svg {
+	stroke: cyan;
+	width: 24px;
+	height: 24px;
+}
+
+/* Sign-in page (dedicated page only, so it's fine to center this) */
+.signin-body {
+	background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.signin-container {
+	background: rgba(0, 0, 0, 0.8);
+	padding: 1.5rem;
+	border-radius: 12px;
+	box-shadow: 0 0 15px cyan;
+	width: 280px;
+}
+
+.signin-container h2 {
+	text-align: center;
+	margin-bottom: 1rem;
+	color: cyan;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-bottom: 0.3rem;
+	font-size: 0.9rem;
+}
+
+input {
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 6px;
+	font-size: 0.9rem;
+}
+
+button[type="submit"] {
+	background: cyan;
+	color: black;
+	padding: 0.6rem;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.3s;
+	font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+	background: white;
+	color: black;
+}
+
+
+.hero {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-media {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	isolation: isolate
+}
+
+.hero-svg {
+	width: 70%;
+	max-width: 900px;
+	opacity: 0.98;
+	filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.7));
+}
+
+/* slide positioning */
+.slide {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transform: scale(0.98);
+	transition: opacity .7s ease, transform .7s ease
+}
+
+.slide.active {
+	opacity: 1;
+	transform: scale(1)
+}
+
+.device-svg {
+	width: 58%;
+	max-width: 860px;
+	opacity: 0.98;
+	filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.8));
+}
+
+/* Photorealistic image sizing: desktop-first */
+.device-img {
+	width: 750px;
+	max-width: 72vw;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	filter: contrast(.95) saturate(.95);
+	pointer-events: auto;
+	cursor: pointer;
+	transition: transform .36s cubic-bezier(.2, .9, .2, 1), box-shadow .36s ease
+}
+
+.logo-img {
+	width: 350px;
+	height: 100ox;
+	display: block;
+	object-fit: cover;
+	filter: contrast(.95) saturate(.95);
+	pointer-events: auto;
+	cursor: pointer;
+	transition: transform .36s cubic-bezier(.2, .9, .2, 1), box-shadow .36s ease
+}
+
+/* 3D perspective container for tilt effect */
+.hero-media .slide {
+	perspective: 1400px
+}
+
+.hero-media .slide .slide-link {
+	transform-style: preserve-3d
+}
+
+/* small 3D tilt applied to the image for depth */
+.tilt-3d {
+	transform: rotateX(6deg) rotateY(-6deg)
+}
+
+/* hover animations (desktop priority) */
+.logo:hover {
+	transform: translateY(-2px) scale(1.02);
+	transition: transform .28s cubic-bezier(.2, .8, .2, 1)
+}
+
+.logo {
+	transition: transform .28s
+}
+
+.cta {
+	transition: transform .18s ease, box-shadow .18s ease
+}
+
+.cta:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6)
+}
+
+/* make slide links cover the slide area for desktop (clickable) */
+.slide-link {
+	display: inline-block;
+	position: relative
+}
+
+/* subtle reflection / sheen placed above the phone for realism */
+.slide-link::after {
+	content: "";
+	position: absolute;
+	left: 6%;
+	top: 8%;
+	width: 56%;
+	height: 44%;
+	pointer-events: none;
+	transform: rotate(-16deg);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
+	filter: blur(8px);
+	mix-blend-mode: overlay;
+	opacity: 0.95
+}
+
+@media (max-width:900px) {
+	.device-img {
+		width: 85vw;
+		max-width: 520px
+	}
+
+	.device-svg {
+		width: 95%
+	}
+}
+
+/* iPhone front view: darker frame and subtle shine */
+.slide-1 .device-img {
+	border-radius: 18px;
+	/* layered outer shadow + soft ambient spread to ground the device */
+	box-shadow:
+		0 48px 110px rgba(0, 0, 0, 0.72),
+		0 18px 46px rgba(0, 0, 0, 0.40);
+	/* removed bezel border and inset highlight so the device blends with the background */
+	border: none;
+	background: transparent;
+	transform-origin: center center;
+}
+
+/* subtle perspective skew when active to sell 3D depth */
+.slide.active .tilt-3d {
+	transform: rotateX(6deg) rotateY(-6deg) translateZ(12px)
+}
+
+/* gentle lift on hover for desktop to add depth */
+.device-img:hover {
+	transform: translateY(-6px) scale(1.01);
+	box-shadow: 0 56px 130px rgba(0, 0, 0, 0.75), 0 20px 50px rgba(0, 0, 0, 0.45)
+}
+
+
+.device-img img {
+	width: 100%;
+	outline: none;
+	border: none
+}
+
+.TCT {
+	width: 90%;
+	height: 80%;
+	position: center;
+	top: 150%;
+	right: 200;
+}
+
+/* drag-follow cursor when interacting */
+.hero.dragging {
+	cursor: grabbing
+}
+
+.hero.dragging .device-img {
+	transition: none
+}
+
+/* header background states for slides */
+.site-header.slide-0 {
+	background: linear-gradient(90deg, rgba(8, 8, 8, 0.35), rgba(12, 12, 12, 0.05));
+	backdrop-filter: blur(4px)
+}
+
+.site-header.slide-1 {
+	background: linear-gradient(90deg, rgba(6, 6, 6, 0.45), rgba(14, 14, 14, 0.08));
+	backdrop-filter: blur(4px)
+}
+
+.site-header.slide-2 {
+	background: linear-gradient(90deg, rgba(10, 10, 10, 0.5), rgba(20, 20, 20, 0.1));
+	backdrop-filter: blur(6px)
+}
+
+.hero-content {
+	position: relative;
+	text-align: center;
+	z-index: 30;
+}
+
+.h4 {
+	font-family: 'Playfair Display', serif;
+	color: rgb(204, 8, 8);
+	letter-spacing: 2px;
+	margin-bottom: 14px;
+	font-weight: bolder;
+
+}
+
+.S3C {
+	font-family: 'Playfair Display', serif;
+	color: rgb(255, 255, 255);
+	letter-spacing: 2px;
+	margin-bottom: 14px;
+	font-weight: bolder;
+
+}
+
+.S4C {
+	font-family: 'Playfair Display', serif;
+	color: rgba(54, 66, 235, 0.945);
+	letter-spacing: 2px;
+	margin-bottom: 14px;
+	font-weight: bolder;
+
+}
+
+.eyebrow {
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+	font-size: 14px;
+	color: #cfcfcf;
+	letter-spacing: 2px;
+	margin-bottom: 14px;
+}
+
+.title {
+	font-weight: bolder;
+	font-size: 86px;
+	margin: 0 0 22px 0;
+	letter-spacing: 8px;
+	color: #fff;
+	text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cta {
+	display: inline-block;
+	padding: 12px 36px;
+	background: transparent;
+	color: #fff;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	letter-spacing: 3px;
+	font-size: 14px;
+	margin-top: 8px;
+	cursor: pointer;
+	border-radius: 30px;
+	align-content: center;
+
+}
+
+.acl {
+	display: inline-block;
+	padding: 12px 36px;
+	background: transparent;
+	color: #fff;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	letter-spacing: 3px;
+	font-size: 14px;
+	margin-top: 8px;
+	cursor: pointer;
+	border-radius: 30px;
+	align-content: center;
+}
+
+.cta:hover {
+	border-color: rgba(255, 255, 255, 0.85)
+}
+
+.slider-indicators {
+	position: absolute;
+	bottom: 36px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 14px;
+	z-index: 35
+}
+
+.dot {
+	width: 46px;
+	height: 4px;
+	background: rgba(255, 255, 255, 0.08);
+	border-radius: 4px;
+	display: inline-flex
+}
+
+.dot.active {
+	background: rgba(255, 255, 255, 0.25);
+	width: 46px
+}
+
+
+/* Force-disable any 3D/tilt overlay, highlights or pseudo-element */
+.hero-media,
+.hero-media *,
+.slide,
+.slide *,
+.slide .slide-link,
+.slide .device-img {
+	transform: none !important;
+	transform-style: flat !important;
+	perspective: none !important;
+	backface-visibility: visible !important;
+	will-change: auto !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	filter: none !important;
+	mix-blend-mode: normal !important;
+}
+
+/* Remove any pseudo-element overlays that create the white/tilted rectangle */
+.hero-media::before,
+.hero-media::after,
+.slide::before,
+.slide::after,
+.slide .slide-link::before,
+.slide .slide-link::after,
+.device-img::before,
+.device-img::after {
+	content: none !important;
+	display: none !important;
+	background: none !important;
+	box-shadow: none !important;
+	filter: none !important;
+}
+
+/* In case a helper class is used for the tilt */
+.tilt-3d,
+.tilt-3d * {
+	transform: none !important;
+	box-shadow: none !important;
+	filter: none !important;
+	background: transparent !important;
+}
+
+/* Remove purple underline/highlight from the title and link states */
+.slide .title,
+.slide .slide-link,
+.slide .slide-link:link,
+.slide .slide-link:visited,
+.slide .slide-link:hover,
+.slide .slide-link:active,
+.slide .slide-link:focus {
+	text-decoration: none !important;
+	border-bottom: none !important;
+	box-shadow: none !important;
+	background-image: none !important;
+	outline: none !important;
+}
+
+/* If the underline is implemented with a pseudo-element, ensure it's removed */
+.slide .title::after,
+.slide .slide-link::after,
+.slide .title::before,
+.slide .slide-link::before {
+	content: none !important;
+	display: none !important;
+}
+
+@media (max-width:900px) {
+	.title {
+		font-size: 48px;
+		letter-spacing: 6px
+	}
+
+	.hero-svg {
+		width: 95%
+	}
+
+	.site-header {
+		padding: 0 20px
+	}
+}

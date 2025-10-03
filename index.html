@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Tesla Ideas</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<header class="site-header">
+		<div class="logo">
+			T E S L A
+		</div>
+		<div class="dropdown" id="menuDropdown">
+			<!-- Hamburger button -->
+			<div class="menu-btn" id="menuBtn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			<!-- Dropdown menu -->
+			<div class="dropdown-content">
+				<a href="#">Option 1</a>
+				<a href="#">Option 2</a>
+				<a href="#">Option 3</a>
+				<a href="#">Option 4</a>
+				<a href="#">Option 5</a>
+				<a href="#">Option 6</a>
+				<a href="#">Option 7</a>
+				<a href="#">Option 8</a>
+				<a href="#">Option 9</a>
+				<a href="#">Option 10</a>
+			</div>
+		</div>
+		<!-- Futuristic circular sign-in button -->
+		<button id="signinBtn" class="signin-btn" aria-label="Sign in">
+			<!-- Simple "man in suit" icon using SVG -->
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+				<circle cx="32" cy="20" r="12" stroke="white" stroke-width="2" fill="none" />
+				<path d="M16 56c0-8 8-16 16-16s16 8 16 16" stroke="white" stroke-width="2" fill="none" />
+			</svg>
+		</button>
+	</header>
+
+	<main class="hero">
+		<div class="hero-media" aria-hidden="true">
+			<!-- Slide 1: Tesla model S  -->
+			<div class="slide slide-1 active" data-slide="0">
+				<a class="slide-link">
+					<h4 class="title">MODEL S </h4>
+					<img class="device-img" alt="" src="imgs/Red-Tesla-Model-S.png">
+					<h4 class="h4">Ultra Red</h4>
+					<button data-href="page1.html" class="cta">View Model S</button>
+					<button href="page1.html" class="cta"> Add to Wishlist</button>
+				</a>
+			</div>
+
+			<!-- Slide 2: Tesla model X  -->
+			<div class="slide slide-2" data-slide="1">
+				<a class="slide-link" href="page2.html">
+					<h4 class="title">MODEL X</h4>
+					<img class="device-img" alt="Tesla Model X" src="imgs/Tesla-Model-X-Transparent-Images.png">
+					<h4 class="S3C">Solid Black</h4>
+					<button href="page2.html" class="cta">View Model X</button>
+					<button class="cta"> Add to Wishlist</button>
+				</a>
+			</div>
+
+			<!-- Slide 3: Tesla model Y -->
+			<div class="slide slide-3" data-slide="2">
+				<a class="slide-link" href="page3.html">
+					<h4 class="title">MODEL Y </h4>
+					<img class="device-img" alt="Teslma Meodel Y" src="imgs/Tesla model Y FrontSide View">
+					<h4 class="S3C">Solid Black</h4>
+					<button href="page3.html" class="cta">View Model Y</button>
+					<button class="cta"> Add to Wishlist</button>
+				</a>
+			</div>
+
+			<!-- Slide 4: Tesla Cyber Truck -->
+			<div class="slide slide-4" data-slide="3">
+				<a class="slide-link" href="page4.html">
+					<img class="logo-img" alt="Tesla Logo" src="imgs/Tesla_Cybertruck-Logo.wine (1).png">
+					<img class="TCT" alt="Tesla CyberTruck" src="imgs/tesla_cybertruck_PNG15 bluee increased size.png">
+					<h4 class="S4C">Base Blue</h4>
+					<button href="page4.html" class="cta">View Cybertruck</button>
+					<button class="cta"> Add to Wishlist</button>
+				</a>
+			</div>
+		</div>
+		<div class="hero-content">
+
+
+
+
+		</div>
+
+		<div class="slider-indicators">
+			<span class="dot active"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
